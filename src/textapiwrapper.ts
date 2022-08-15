@@ -6,18 +6,20 @@ import { Schedule } from "./types";
 let messageClient;
 const setMessageReminder = (schedule: Schedule, auth: Credentials) => {};
 
-export const SendMessage = (body: string, auth: Credentials) => {
+export const sendMessage = async (body: string, auth: Credentials) => {
 	const client: twilio.Twilio = require("twilio")(auth.SID, auth.AUTH);
 
-	client.messages
-		.create({
-			// todo
-			body: body,
-			to: "+14253651444", // Text this number
-			from: auth.PHONE_NUM, // From a valid Twilio number
-		})
-		.catch((error: any) => {
-			console.log("Error occurred: ");
-			console.log(error);
-		});
+	return new Promise((resolve, reject) => {
+		client.messages
+			.create({
+				// todo
+				body: body,
+				to: "+14253651444", // Text this number
+				from: auth.PHONE_NUM, // From a valid Twilio number
+			})
+			.then((msg) => resolve(msg.sid))
+			.catch((error) => {
+				reject(error);
+			});
+	});
 };

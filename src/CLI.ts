@@ -232,9 +232,9 @@ const setSchedule = (): Schedule => {
 		while (title === "") {
 			title = prompt("Enter Title of Task: ");
 		}
-		let body: string = prompt("Enter Title of Task: ");
+		let body: string = prompt("Enter Body of Task: ");
 		while (body === "") {
-			body = prompt("Enter Title of Task: ");
+			body = prompt("Enter Body of Task: ");
 		}
 		console.log("Enter time: ");
 		let time: number = getTimeInMs();
