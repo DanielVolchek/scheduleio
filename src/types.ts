@@ -9,7 +9,7 @@ export type Credentials = {
 // schedule entries
 export type ScheduleEntry = {
 	time: number;
-	body?: string;
+	body: string;
 	type?: string;
 };
 export type Schedule = {

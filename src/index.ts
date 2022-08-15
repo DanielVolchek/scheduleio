@@ -4,6 +4,6 @@ import { SendMessage } from "./textapiwrapper";
 
 const { credentials, schedule } = startCLI();
 
-setSchedule(schedule);
+setSchedule(credentials, schedule);
 // SendMessage("immediately", credentials);
 // setTimeout(() => SendMessage("30 Seconds after running", credentials), 30000);

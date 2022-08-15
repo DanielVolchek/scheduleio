@@ -232,9 +232,13 @@ const setSchedule = (): Schedule => {
 		while (title === "") {
 			title = prompt("Enter Title of Task: ");
 		}
+		let body: string = prompt("Enter Title of Task: ");
+		while (body === "") {
+			body = prompt("Enter Title of Task: ");
+		}
 		console.log("Enter time: ");
 		let time: number = getTimeInMs();
-		schedule[title] = { time };
+		schedule[title] = { time, body };
 		continueAddingEntries = prompt("continue entering tasks (y/n): ");
 		while (continueAddingEntries !== "n" && continueAddingEntries !== "y") {
 			continueAddingEntries = prompt("Enter y(es) or n(o) to continue: ");

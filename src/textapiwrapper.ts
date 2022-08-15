@@ -16,7 +16,6 @@ export const SendMessage = (body: string, auth: Credentials) => {
 			to: "+14253651444", // Text this number
 			from: auth.PHONE_NUM, // From a valid Twilio number
 		})
-		.then((msg) => console.log(msg.sid))
 		.catch((error: any) => {
 			console.log("Error occurred: ");
 			console.log(error);
